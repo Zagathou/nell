@@ -1,0 +1,42 @@
+# Nell – The First Descendant (Nexon)
+
+> A Ranged DPS who leads tactical combat with analytical skills unique to an HQ Executive Officer. She possesses powerful offensive capabilities through Arche that embodies her dark inner self. Unofficial fan page with official data only (NEXON library + Nexon Open API, 01.10.2026).
+
+Page: https://nell.freyna.org/
+Full plain-text data: https://nell.freyna.org/llms-full.txt
+Official library: https://tfd.nexon.com/en/library/descendants/101000029
+
+All values on this page are max level: Descendant stats at Lv 40 (max), modules at their max enhancement level (Transcendent modules Lv 10). Weapons on the TFD pages are always listed at Lv 100 with 4 stars (Unique Ability Level 4).
+
+## Key facts
+- Full name: Nell Hathaway (official story) · Descendant ID 101000029
+- Attribute: Non-Attribute · Arche types: Tech (Suspicion & Insight, Breach Projection, Gaze of the Abyss), Fusion (Breach Link, Gravitic Reversal)
+- Role: Ranged DPS · Affiliation: Executive Officer of Albion Headquarters · Voice actor (EN): Naomi McDonald
+- Ultimate Nell: none (as of 01.10.2026)
+- Lv 40 (max) stats: Max HP 1,402 / Max Shield 671 / Max MP 243 / DEF 2,325 / Shield Recovery Out of Combat 3.96 / Shield Recovery In Combat 3.3
+- Skills: Suspicion & Insight (Passive Skill); Breach Projection (Active Skill); Breach Link (Active Skill); Gravitic Reversal (Active Skill); Gaze of the Abyss (Active Skill)
+- Exclusive modules: Restored Heart (Transcendent); Shattered Heart (Transcendent); Tactician's Resolution (Ancestors)
+- Research: Nell 16 Hours / 400,000 Gold / Nell Enhanced Cells, Nell Stabilizer, Nell Spiral Catalyst, Nell Code (x1 each; each part 8 Hours / 200,000 Gold / Archive Shard x48)
+- Header image: placeholder ("IMAGE COMING SOON"), no image yet
+
+## Contact
+- Name: Christian Grigoriadis (Artist Name: Zagathou)
+- TFD In-Game Name: Zagathou#4768
+- E-Mail: xelotath@outlook.de
+- Session App ID: 055065749fb6c6c2f07cb2ed15021b88eed3fc480e87215cca925ede91454e7173
+- About: https://zagathou.github.io/zagathou/
+- GitHub: https://github.com/Zagathou
+
+## TFD Pages
+- Freyna.ORG: https://freyna.org/
+- Modules: https://modules.freyna.org/
+- Weapons: https://weapons.freyna.org/
+- Raven: https://raven.freyna.org/
+- Nell: https://nell.freyna.org/
+- descendant.gg: https://descendant.gg/
+
+All values: max level (Descendants Lv 40, weapons Lv 100 at 4 stars / Unique Ability Level 4, modules at max enhancement level).
+These webpages are optimized for Non-Agentic Artificial Intelligence and easy to read.
+All game-related content © Nexon (https://tfd.nexon.com/)
+Unofficial fan site – not affiliated with or endorsed by Nexon. The First Descendant is a trademark of Nexon.
+Last Updated: 01.10.2026

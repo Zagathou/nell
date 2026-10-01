@@ -1,0 +1,141 @@
+# Nell – The First Descendant (Nexon) – full data
+
+Page: https://nell.freyna.org/
+Official library: https://tfd.nexon.com/en/library/descendants/101000029
+Data status: 01.10.2026 (NEXON library + Nexon Open API metadata)
+
+All values on this page are max level: Descendant stats at Lv 40 (max), modules at their max enhancement level (Transcendent modules Lv 10). Weapons on the TFD pages are always listed at Lv 100 with 4 stars (Unique Ability Level 4).
+
+## Overview
+A Ranged DPS who leads tactical combat with analytical skills unique to an HQ Executive Officer. She possesses powerful offensive capabilities through Arche that embodies her dark inner self.
+
+## Facts
+- Name: Nell (DE: Nell)
+- Full name: Nell Hathaway (official story; her family is the Hathaway family)
+- Role: Ranged DPS who leads tactical combat with the analytical skills of an HQ Executive Officer
+- Attribute: Non-Attribute (all skills)
+- Arche types: Tech (Suspicion & Insight, Breach Projection, Gaze of the Abyss), Fusion (Breach Link, Gravitic Reversal)
+- Affiliation: Executive Officer of Albion Headquarters and Operations Controller; appointed Chief Executive Officer by Alpha
+- Voice actor (EN): Naomi McDonald
+- Descendant ID: 101000029
+- Ultimate version: none (as of 01.10.2026)
+- Acquisition: Obtainable through Research
+
+## Stats (Lv 40, max level)
+- Max HP: 1,402
+- Max Shield: 671
+- Max MP: 243
+- DEF: 2,325
+- Shield Recovery Out of Combat: 3.96
+- Shield Recovery In Combat: 3.3
+
+## Skills
+Cooldowns, MP costs and numeric skill values: not published in the official data.
+
+### Suspicion & Insight (DE: Zweifel und Erkenntnis)
+- Slot: Passive | Type: Passive Skill | Element: Non-Attribute | Arche: Tech
+- When using Ecive, enemies in front are inflicted with the Ecive Scan effect.
+- When attacking enemies inflicted with the Ecive Scan effect, additional damage is dealt.
+- When an enemy with the Ecive Scan effect dies, the Ecive Scan effect is applied to nearby enemies.
+- Enemies positioned at the crosshair are guaranteed to receive the Ecive Scan effect; for Colossi, if the crosshair is near a weak point, that weak point receives the Ecive Scan effect.
+- When decrypting an Encrypted Vault, efficiency increases, and the reward amount increases upon successful decryption.
+
+### Breach Projection (DE: Breschenprojektion)
+- Slot: Skill 1 | Type: Active Skill | Element: Non-Attribute | Arche: Tech
+- Fires a barrage of Breach Shards, dealing damage to hit enemies.
+- If the enemy hit is inflicted with Ecive Scan, an additional effect is triggered.
+
+### Breach Link (DE: Breschenring)
+- Slot: Skill 2 | Type: Active Skill | Element: Non-Attribute | Arche: Fusion
+- Creates an Arche Breach at a designated location. Inflicts a debuff on enemies near the created Arche Breach and spawns an Anti-Gravity Field on the ground. The debuff of the Arche Breach intensifies over time and further weakens Adaptive Defense. Reusing the skill retrieves the Arche Breach. On retrieval, the Anti-Gravity Field disappears, dealing Explosion Damage to the area around it and refunding a portion of the Cooldown.
+
+### Gravitic Reversal (DE: Antigravitationsphänomen)
+- Slot: Skill 3 | Type: Active Skill | Element: Non-Attribute | Arche: Fusion
+- Detonates an Arche Breach, causing Gravitic Reversal.
+- Inflicts Tow on enemies near the Arche Breach and deals Explosion Damage to them.
+
+### Gaze of the Abyss (DE: Abgrundblick)
+- Slot: Skill 4 | Type: Active Skill | Element: Non-Attribute | Arche: Tech
+- Grants Gaze of the Abyss.
+- All Firearm Attacks from Nell target Weak Points, increasing the Weak Point Damage of herself and nearby allies.
+- While Gaze of the Abyss is active, hitting a target inflicted with Ecive Scan with a Breach Shard increases the duration of Gaze of the Abyss.
+
+## Effects named in the skill texts
+- Ecive Scan: Inflicted on enemies in front when using Ecive (Suspicion & Insight). Attacks on enemies with Ecive Scan deal additional damage; when such an enemy dies, Ecive Scan spreads to nearby enemies. Enemies at the crosshair always receive it; on Colossi, a weak point near the crosshair receives it.
+- Breach Shard: Fired in a barrage by Breach Projection. Hitting an enemy with Ecive Scan triggers an additional effect; while Gaze of the Abyss is active, it also increases the duration of Gaze of the Abyss.
+- Arche Breach: Created by Breach Link at a designated location; debuffs nearby enemies (intensifies over time and further weakens Adaptive Defense). Retrieved by reusing Breach Link; detonated by Gravitic Reversal.
+- Anti-Gravity Field: Spawned on the ground by Breach Link. Disappears when the Arche Breach is retrieved, dealing Explosion Damage around it and refunding a portion of the Cooldown.
+- Tow: Inflicted by Gravitic Reversal on enemies near the Arche Breach.
+- Gaze of the Abyss: Granted by the skill of the same name: all of Nell's Firearm Attacks target Weak Points, and Weak Point Damage of Nell and nearby allies increases.
+- Suspicion stacks: Only with the Transcendent module Shattered Heart: built up with Breach Spikes, then enhanced Breach Spikes are fired.
+- Encrypted Vault: Suspicion & Insight increases decryption efficiency and the reward amount on successful decryption.
+
+## Ultimate Nell
+None in the official library or Open API.
+
+## Exclusive modules (max level)
+### Restored Heart (DE: Zurückerhaltenes Herz)
+- Tier: Transcendent | Socket: Rutile | Slot: Skill | Max level: Lv 10 | Capacity at max level: 3 (Lv 0: 13)
+- Effect (max level): Changes Ring of Breach and Gravitic Reversal to skills that grant buffs to allies.
+### Shattered Heart (DE: Gebrochenes Herz)
+- Tier: Transcendent | Socket: Rutile | Slot: Skill | Max level: Lv 10 | Capacity at max level: 6 (Lv 0: 16)
+- Effect (max level): Changes Gaze of the Abyss to an attack skill. / Builds up Suspicion stacks using Breach Spikes, then fires enhanced Breach Spikes.
+### Tactician's Resolution (DE: Entschlossenheit der Taktikerin)
+- Tier: Ancestors | Socket: — | Slot: Main | Max level: no levels | Capacity at max level: 16
+- Effect (max level): no fixed effect text in the official data (Ancestors module)
+Note: the module text says "Ring of Breach"; the German module text uses "Breschenring", the German name of Breach Link – so it refers to Breach Link.
+
+## Weapons & reactor
+No official weapon or reactor recommendation; no skill is tied to a weapon type. While Gaze of the Abyss is active, all Firearm Attacks target Weak Points. Lv 100 / 4-star weapon values: https://weapons.freyna.org/
+
+## Story
+Quote: "Was I really part of their family? / Wasn't I just another Hathaway making a 'rational' choice?" – Nell, in the official library story
+Nell Hathaway was already irreplaceable as a capable Executive Officer of Albion Headquarters and an Operations Controller who oversaw most of the Operations she planned herself. The staff cadets envied her, and her strategic judgment was considered to have surpassed Alpha's.
+Her family had "rationally" forced her out to join the academy so they would have one less mouth to feed; when contact with them was lost after they moved to Axion, she felt nothing. She came to see Alpha, the Descendants and the soldiers of Albion as her family – her Operations prioritized survival over success, and many trusted and followed her because of it.
+That belief turned to doubt when she had to decide which "family members" would live and which would die: leaving ten to save a hundred, sacrificing fifty to save a thousand. She began to fear she was just another Hathaway making "rational" choices, and the screams of soldiers lost in Operations took away even her prescribed hours of sleep.
+When those doubts led to her worst accident, Nell finally faced her true self. Her doubts became an abyss that reached to the ends of her mind and yielded her Arche. She resolved to embrace that part of herself – believing that faith in victory can come from the doubts of defeat – and vowed to believe in her doubts and use them to her advantage.
+
+## Exclusive Equipment / Ability: Exclusive Arche, Breach Entropy Control
+The Vulgus and humanity share two concepts: dimension – the boundaries dividing the Void, Ingris and other worlds, passed on to humanity through the Magisters – and Breach, damage done to the Dimensional Wall.
+They differ in how they use it: the Vulgus artificially create Breaches to tear down the Dimensional Wall, while humanity replaces the broken Dimensional Wall with Arche and uses the replaced Breach entropy as a weapon against the enemy. Nell is still the only human who can use it that way.
+Quote: "You've always had a lot of doubts. / So, I trust that when given such great power, you'll use it carefully." – Alpha, handing Nell her appointment as Chief Executive Officer
+
+## Research
+- Nell: 16 Hours / 400,000 Gold / Nell Enhanced Cells x1 · Nell Stabilizer x1 · Nell Spiral Catalyst x1 · Nell Code x1
+- Nell Enhanced Cells: 8 Hours / 200,000 Gold / Archive Shard x48
+- Nell Stabilizer: 8 Hours / 200,000 Gold / Archive Shard x48
+- Nell Spiral Catalyst: 8 Hours / 200,000 Gold / Archive Shard x48
+- Nell Code: 8 Hours / 200,000 Gold / Archive Shard x48
+- Nell Enhanced Cells: Enhanced cells designed to fit Nell's Arche, which will replace the current cells upon injection.
+- Nell Stabilizer: A mechanism used to stabilize Nell's Arche. It has been engraved in a specific way to respond to Nell's Arche.
+- Nell Spiral Catalyst: Nell's Spiral Catalyst. This catalyst can maximize Nell's Arche response.
+- Nell Code: A code that contains the Arche expression formula for Nell. The basic materials needed for research must be obtained separately.
+- Drop locations of Archive Shards: not listed in the official library.
+
+## Sources
+- https://tfd.nexon.com/en/library/descendants/101000029
+- https://open.api.nexon.com/static/tfd/meta/en/descendant.json
+- https://open.api.nexon.com/static/tfd/meta/en/module.json
+- https://descendant.gg/database/descendants/101000029 (third party)
+
+## Contact
+- Name: Christian Grigoriadis (Artist Name: Zagathou)
+- TFD In-Game Name: Zagathou#4768
+- E-Mail: xelotath@outlook.de
+- Session App ID: 055065749fb6c6c2f07cb2ed15021b88eed3fc480e87215cca925ede91454e7173
+- About: https://zagathou.github.io/zagathou/
+- GitHub: https://github.com/Zagathou
+
+## TFD Pages
+- Freyna.ORG: https://freyna.org/
+- Modules: https://modules.freyna.org/
+- Weapons: https://weapons.freyna.org/
+- Raven: https://raven.freyna.org/
+- Nell: https://nell.freyna.org/
+- descendant.gg: https://descendant.gg/
+
+All values: max level (Descendants Lv 40, weapons Lv 100 at 4 stars / Unique Ability Level 4, modules at max enhancement level).
+These webpages are optimized for Non-Agentic Artificial Intelligence and easy to read.
+All game-related content © Nexon (https://tfd.nexon.com/)
+Unofficial fan site – not affiliated with or endorsed by Nexon. The First Descendant is a trademark of Nexon.
+Last Updated: 01.10.2026

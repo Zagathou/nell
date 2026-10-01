@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nell – The First Descendant (Nexon): Skills, Stats, Modules, Story</title>
+  <meta name="description" content="Nell (Nell Hathaway), Non-Attribute Ranged DPS Descendant of The First Descendant: official skills (Suspicion &amp; Insight, Breach Projection, Breach Link, Gravitic Reversal, Gaze of the Abyss), Lv 40 stats, Transcendent modules Restored Heart and Shattered Heart, story and research cost – from the NEXON library and Open API.">
+  <link rel="canonical" href="https://nell.freyna.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FREYNA.ORG">
+  <meta property="og:title" content="Nell – The First Descendant (Nexon): Skills, Stats, Modules, Story">
+  <meta property="og:description" content="Nell (Nell Hathaway), Non-Attribute Ranged DPS Descendant of The First Descendant: official skills (Suspicion &amp; Insight, Breach Projection, Breach Link, Gravitic Reversal, Gaze of the Abyss), Lv 40 stats, Transcendent modules Restored Heart and Shattered Heart, story and research cost – from the NEXON library and Open API.">
+  <meta property="og:url" content="https://nell.freyna.org/">
+  <link rel="alternate" type="text/plain" title="llms.txt" href="https://nell.freyna.org/llms.txt">
+  <link rel="alternate" type="text/plain" title="llms-full.txt" href="https://nell.freyna.org/llms-full.txt">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#1f1f23; --panel:rgba(255,255,255,0.04); --panel-strong:rgba(255,255,255,0.07); --text:rgba(255,255,255,0.88); --muted:rgba(255,255,255,0.62); --content-max:900px; --pad:18px; --accent:#03ff36; --border-img:rgba(255,255,255,0.10); --scroll-track:rgba(0,255,0,0.00); --scroll-thumb:rgba(3,255,54,0.55); --scroll-thumb-hover:rgba(3,255,54,0.85); }
+    *{ box-sizing:border-box; }
+    html, body{ margin:0; background:var(--bg); color:var(--text); font-family:'Nunito', system-ui, sans-serif; font-size:14px; line-height:1.6; }
+    .page{ width:min(100%, 1100px); margin:0 auto; padding:var(--pad); }
+    main{ max-width:var(--content-max); margin:0 auto; }
+    h1,h2,h3,h4{ margin:0 0 10px; font-weight:700; font-family:"Comfortaa", cursive, sans-serif; }
+    h1{ font-size:26px; letter-spacing:0.2px; color:var(--accent); }
+    h2{ font-size:18px; color:var(--accent); margin-top:6px; }
+    h3{ font-size:15px; }
+    p{ margin:0 0 10px; }
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; text-decoration-color:#03ff36; }
+    .ph{ width:min(100%,360px); aspect-ratio:9/16; margin:0 auto 16px; border:1px dashed var(--border-img); border-radius:16px; background:var(--panel); overflow:hidden; box-shadow:0 12px 38px rgba(0,0,0,0.30); }
+    .ph img{ display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+    .ph-empty{ display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+    .ph-empty span{ font-family:"Comfortaa", sans-serif; font-weight:700; font-size:16px; letter-spacing:1.5px; color:var(--muted); text-align:center; padding:0 12px; }
+    .card{ background:var(--panel); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px 18px; margin:0 0 16px; }
+    .badge{ display:inline-block; padding:2px 8px; border-radius:999px; background:color-mix(in srgb,var(--accent) 18%,transparent); border:1px solid color-mix(in srgb,var(--accent) 35%,transparent); color:var(--accent); font-weight:700; font-size:12px; letter-spacing:0.2px; }
+    .lead{ font-size:15px; }
+    .note{ border-left:3px solid var(--accent); background:rgba(3,255,54,0.06); padding:8px 12px; border-radius:10px; font-size:13px; }
+    .na{ color:var(--muted); font-size:12.5px; font-style:italic; }
+    .de{ color:var(--muted); font-weight:400; font-size:.85em; }
+    .table-wrap{ overflow-x:auto; }
+    table{ width:100%; border-collapse:collapse; margin:0 0 12px; }
+    caption{ text-align:left; color:var(--muted); font-size:12.5px; padding:0 0 6px; }
+    th, td{ padding:6px 8px; border:1px solid rgba(3,255,54,0.55); text-align:left; vertical-align:top; }
+    thead th{ background:rgba(3,255,54,0.10); color:var(--accent); font-family:"Comfortaa", sans-serif; font-size:13px; }
+    tbody th{ font-weight:700; }
+    .skill{ background:var(--panel-strong); border-radius:12px; padding:12px 14px; margin:0 0 12px; }
+    .tags{ display:flex; flex-wrap:wrap; gap:6px; }
+    blockquote{ margin:0 0 12px; padding:8px 14px; border-left:3px solid var(--accent); background:var(--panel-strong); border-radius:10px; font-style:italic; }
+    blockquote footer{ font-style:normal; color:var(--muted); font-size:12.5px; margin-top:4px; }
+    dl.terms{ display:grid; grid-template-columns:max-content 1fr; gap:4px 14px; margin:0; }
+    dl.terms dt{ font-weight:700; color:var(--accent); }
+    dl.terms dd{ margin:0; }
+    nav.toc ul{ list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:6px 14px; }
+    ::-webkit-scrollbar{ width:14px; height:14px; }
+    ::-webkit-scrollbar-thumb{ background:var(--scroll-thumb); border-radius:999px; }
+    *{ scrollbar-color:var(--scroll-thumb) var(--scroll-track); }
+    @media (max-width:600px){ dl.terms{ grid-template-columns:1fr; } dl.terms dd{ margin-bottom:6px; } h1{ font-size:22px; } }
+    /* ---------- TFD footer (shared on freyna.org / modules / weapons) ---------- */
+    .tfd-footer{ max-width:900px; margin:24px auto 0; padding:8px 12px 24px; text-align:center; color:var(--tfd-muted, rgba(255,255,255,0.62)); font-family:"Nunito", Tahoma, Arial, sans-serif; font-size:13px; line-height:1.55; }
+    .tfd-footer p{ margin:0 0 6px; }
+    .tfd-footer h2{ font-family:"Comfortaa", Tahoma, Arial, sans-serif; font-size:16px; color:var(--tfd-accent, #03ff36); margin:0 0 10px; }
+    .tfd-contact{ text-align:left; margin:0 0 14px; padding:16px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; color:var(--tfd-text, rgba(255,255,255,0.88)); font-size:14px; }
+    .tfd-contact dl{ margin:0; display:grid; grid-template-columns:max-content 1fr; gap:4px 12px; }
+    .tfd-contact dt{ color:var(--tfd-muted, rgba(255,255,255,0.62)); font-weight:700; }
+    .tfd-contact dd{ margin:0; min-width:0; overflow-wrap:anywhere; word-break:break-word; }
+    .tfd-contact .sid{ font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:12px; }
+    .tfd-pages p{ margin:0 0 4px; font-weight:700; }
+    .tfd-pages ul{ list-style:none; margin:0 0 10px; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:6px 14px; }
+    .tfd-footer a{ color:var(--tfd-accent, #03ff36); }
+    @media (max-width:600px){ .tfd-contact dl{ grid-template-columns:1fr; } .tfd-contact dd{ margin-bottom:6px; } }
+    
+  </style>
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebPage",
+   "@id": "https://nell.freyna.org/#webpage",
+   "url": "https://nell.freyna.org/",
+   "name": "Nell – The First Descendant (Nexon): Skills, Stats, Modules, Story",
+   "description": "Nell (Nell Hathaway), Non-Attribute Ranged DPS Descendant of The First Descendant: official skills (Suspicion & Insight, Breach Projection, Breach Link, Gravitic Reversal, Gaze of the Abyss), Lv 40 stats, Transcendent modules Restored Heart and Shattered Heart, story and research cost – from the NEXON library and Open API.",
+   "inLanguage": "en",
+   "dateModified": "2026-10-01",
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "FREYNA.ORG",
+    "url": "https://freyna.org/"
+   },
+   "about": {
+    "@id": "https://nell.freyna.org/#nell"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "Christian Grigoriadis",
+    "alternateName": "Zagathou",
+    "url": "https://zagathou.github.io/zagathou/"
+   },
+   "citation": [
+    "https://tfd.nexon.com/en/library/descendants/101000029",
+    "https://open.api.nexon.com/static/tfd/meta/en/descendant.json",
+    "https://open.api.nexon.com/static/tfd/meta/en/module.json"
+   ]
+  },
+  {
+   "@type": "Thing",
+   "@id": "https://nell.freyna.org/#nell",
+   "disambiguatingDescription": "Playable character (Descendant) in the video game The First Descendant",
+   "name": "Nell",
+   "alternateName": "Nell Hathaway",
+   "description": "A Ranged DPS who leads tactical combat with analytical skills unique to an HQ Executive Officer. She possesses powerful offensive capabilities through Arche that embodies her dark inner self.",
+   "identifier": "101000029",
+   "sameAs": [
+    "https://tfd.nexon.com/en/library/descendants/101000029"
+   ],
+   "subjectOf": {
+    "@type": "VideoGame",
+    "name": "The First Descendant",
+    "publisher": {
+     "@type": "Organization",
+     "name": "Nexon",
+     "url": "https://tfd.nexon.com/"
+    }
+   },
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "Full name",
+     "value": "Nell Hathaway"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Attribute",
+     "value": "Non-Attribute"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Arche Types",
+     "value": "Tech (Suspicion & Insight, Breach Projection, Gaze of the Abyss), Fusion (Breach Link, Gravitic Reversal)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Voice Actor (EN)",
+     "value": "Naomi McDonald"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Affiliation",
+     "value": "Albion Headquarters (Executive Officer, Operations Controller)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Ultimate version",
+     "value": "none (as of 01.10.2026)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Max HP (Lv 40)",
+     "value": "1,402"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Max Shield (Lv 40)",
+     "value": "671"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Max MP (Lv 40)",
+     "value": "243"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "DEF (Lv 40)",
+     "value": "2,325"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Shield Recovery Out of Combat (Lv 40)",
+     "value": "3.96"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "Shield Recovery In Combat (Lv 40)",
+     "value": "3.3"
+    }
+   ]
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://nell.freyna.org/#skills",
+   "name": "Nell skills",
+   "numberOfItems": 5,
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "item": {
+      "@type": "Thing",
+      "name": "Suspicion & Insight",
+      "alternateName": "Zweifel und Erkenntnis",
+      "description": "When using Ecive, enemies in front are inflicted with the Ecive Scan effect. When attacking enemies inflicted with the Ecive Scan effect, additional damage is dealt. When an enemy with the Ecive Scan effect dies, the Ecive Scan effect is applied to nearby enemies. Enemies positioned at the crosshair are guaranteed to receive the Ecive Scan effect; for Colossi, if the crosshair is near a weak point, that weak point receives the Ecive Scan effect. When decrypting an Encrypted Vault, efficiency increases, and the reward amount increases upon successful decryption.",
+      "disambiguatingDescription": "Passive Skill"
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "item": {
+      "@type": "Thing",
+      "name": "Breach Projection",
+      "alternateName": "Breschenprojektion",
+      "description": "Fires a barrage of Breach Shards, dealing damage to hit enemies. If the enemy hit is inflicted with Ecive Scan, an additional effect is triggered.",
+      "disambiguatingDescription": "Active Skill"
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "item": {
+      "@type": "Thing",
+      "name": "Breach Link",
+      "alternateName": "Breschenring",
+      "description": "Creates an Arche Breach at a designated location. Inflicts a debuff on enemies near the created Arche Breach and spawns an Anti-Gravity Field on the ground. The debuff of the Arche Breach intensifies over time and further weakens Adaptive Defense. Reusing the skill retrieves the Arche Breach. On retrieval, the Anti-Gravity Field disappears, dealing Explosion Damage to the area around it and refunding a portion of the Cooldown.",
+      "disambiguatingDescription": "Active Skill"
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "item": {
+      "@type": "Thing",
+      "name": "Gravitic Reversal",
+      "alternateName": "Antigravitationsphänomen",
+      "description": "Detonates an Arche Breach, causing Gravitic Reversal. Inflicts Tow on enemies near the Arche Breach and deals Explosion Damage to them.",
+      "disambiguatingDescription": "Active Skill"
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 5,
+     "item": {
+      "@type": "Thing",
+      "name": "Gaze of the Abyss",
+      "alternateName": "Abgrundblick",
+      "description": "Grants Gaze of the Abyss. All Firearm Attacks from Nell target Weak Points, increasing the Weak Point Damage of herself and nearby allies. While Gaze of the Abyss is active, hitting a target inflicted with Ecive Scan with a Breach Shard increases the duration of Gaze of the Abyss.",
+      "disambiguatingDescription": "Active Skill"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://nell.freyna.org/#modules",
+   "name": "Nell exclusive modules (max level)",
+   "numberOfItems": 3,
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "item": {
+      "@type": "Thing",
+      "name": "Restored Heart",
+      "alternateName": "Zurückerhaltenes Herz",
+      "identifier": "254029001",
+      "description": "Changes Ring of Breach and Gravitic Reversal to skills that grant buffs to allies. (Transcendent, socket Rutile, slot Skill, capacity 3 at max level 10)"
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "item": {
+      "@type": "Thing",
+      "name": "Shattered Heart",
+      "alternateName": "Gebrochenes Herz",
+      "identifier": "254029002",
+      "description": "Changes Gaze of the Abyss to an attack skill. Builds up Suspicion stacks using Breach Spikes, then fires enhanced Breach Spikes. (Transcendent, socket Rutile, slot Skill, capacity 6 at max level 10)"
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "item": {
+      "@type": "Thing",
+      "name": "Tactician's Resolution",
+      "alternateName": "Entschlossenheit der Taktikerin",
+      "identifier": "261001020",
+      "description": "No fixed effect text in the official data. (Ancestors, socket —, slot Main, capacity 16 at max level 0)"
+     }
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body>
+  <div class="page">
+    <main id="content">
+      <!-- HEADER IMAGE (9:16). To add the image: put nell.jpg (9:16, e.g. 1080x1920, own or licensed – no Nexon images) into the repo root and
+           replace the <div class="ph-empty">…</div> inside the figure below with:
+           <img src="nell.jpg" alt="Nell – The First Descendant" width="1080" height="1920" fetchpriority="high" decoding="async">
+           (build.py does this automatically when nell.jpg exists.) -->
+      <figure class="ph" id="portrait"><div class="ph-empty"><span>IMAGE COMING SOON</span></div></figure>
+
+      <section class="card" id="overview" aria-labelledby="h-overview">
+        <h1 id="h-overview">NELL – Executive Officer of Albion Headquarters</h1>
+        <p class="lead">A Ranged DPS who leads tactical combat with analytical skills unique to an HQ Executive Officer. She possesses powerful offensive capabilities through Arche that embodies her dark inner self.</p>
+        <p class="note">All values on this page are max level: Descendant stats at Lv 40 (max), modules at their max enhancement level (Transcendent modules Lv 10). Weapons on the TFD pages are always listed at Lv 100 with 4 stars (Unique Ability Level 4). Data source: official <a href="https://tfd.nexon.com/en/library/descendants/101000029">NEXON LIBRARY – NELL</a> and the <a href="https://openapi.nexon.com/game/tfd/">NEXON OPEN API</a> metadata (status 01.10.2026). Images are not copied – see the official library page.</p>
+        <nav class="toc" aria-label="Sections">
+          <ul>
+            <li><a href="#facts">FACTS</a></li><li><a href="#stats">STATS</a></li><li><a href="#skills">SKILLS</a></li><li><a href="#terms">EFFECTS</a></li><li><a href="#ultimate">ULTIMATE</a></li><li><a href="#modules">MODULES</a></li><li><a href="#weapons">WEAPONS</a></li><li><a href="#story">STORY</a></li><li><a href="#equipment">EXCLUSIVE ABILITY</a></li><li><a href="#research">RESEARCH</a></li><li><a href="#sources">SOURCES</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="card" id="facts" aria-labelledby="h-facts">
+        <h2 id="h-facts">Facts</h2>
+        <div class="table-wrap">
+        <table>
+          <caption>Nell – key facts (official)</caption>
+          <tbody>
+          <tr><th scope="row">Name</th><td>Nell (DE: Nell)</td></tr>
+          <tr><th scope="row">Full name</th><td>Nell Hathaway (official story: "Nell Hathaway was already irreplaceable…"; her family is the Hathaway family)</td></tr>
+          <tr><th scope="row">Role (library feature)</th><td>Ranged DPS who leads tactical combat with the analytical skills of an HQ Executive Officer</td></tr>
+          <tr><th scope="row">Attribute</th><td><span class="badge">Non-Attribute</span> (all skills Non-Attribute)</td></tr>
+          <tr><th scope="row">Arche types</th><td>Tech: Suspicion &amp; Insight, Breach Projection, Gaze of the Abyss · Fusion: Breach Link, Gravitic Reversal</td></tr>
+          <tr><th scope="row">Affiliation</th><td>Executive Officer of Albion Headquarters and Operations Controller; appointed Chief Executive Officer by Alpha (official story / exclusive ability text)</td></tr>
+          <tr><th scope="row">Voice Actor (EN)</th><td>Naomi McDonald</td></tr>
+          <tr><th scope="row">Descendant ID</th><td>101000029</td></tr>
+          <tr><th scope="row">Ultimate version</th><td>None (no Ultimate Nell in the library or Open API as of 01.10.2026)</td></tr>
+          <tr><th scope="row">Acquisition</th><td>Obtainable through Research</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section class="card" id="stats" aria-labelledby="h-stats">
+        <h2 id="h-stats">Stats (Lv 40 – max level)</h2>
+        <div class="table-wrap">
+        <table>
+          <caption>Nell base stats at Lv 40 (max) – Nexon Open API descendant.json, matches the library "Stat Info (Lv 40)" (the library does not show Shield Recovery In Combat)</caption>
+          <thead><tr><th scope="col">Stat</th><th scope="col">Lv 40 (max)</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">Max HP</th><td>1,402</td></tr>
+          <tr><th scope="row">Max Shield</th><td>671</td></tr>
+          <tr><th scope="row">Max MP</th><td>243</td></tr>
+          <tr><th scope="row">DEF</th><td>2,325</td></tr>
+          <tr><th scope="row">Shield Recovery Out of Combat</th><td>3.96</td></tr>
+          <tr><th scope="row">Shield Recovery In Combat</th><td>3.3</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section class="card" id="skills" aria-labelledby="h-skills">
+        <h2 id="h-skills">Skills</h2>
+        <p class="note">Skill descriptions are verbatim from the official library / Open API. Cooldowns, MP costs and numeric skill values (at any level) are not published in the official data – the library and the Open API publish descriptions only, so nothing is invented here.</p>
+        <div class="table-wrap">
+        <table>
+          <caption>Skill overview (slot order as in the Open API)</caption>
+          <thead><tr><th scope="col">Skill</th><th scope="col">Slot</th><th scope="col">Type</th><th scope="col">Element</th><th scope="col">Arche</th></tr></thead>
+          <tbody>
+          <tr>
+            <th scope="row">Suspicion &amp; Insight<br><span class="de" lang="de">DE: Zweifel und Erkenntnis</span></th>
+            <td>Passive</td><td>Passive Skill</td><td>Non-Attribute</td><td>Tech</td>
+          </tr>
+          <tr>
+            <th scope="row">Breach Projection<br><span class="de" lang="de">DE: Breschenprojektion</span></th>
+            <td>Skill 1</td><td>Active Skill</td><td>Non-Attribute</td><td>Tech</td>
+          </tr>
+          <tr>
+            <th scope="row">Breach Link<br><span class="de" lang="de">DE: Breschenring</span></th>
+            <td>Skill 2</td><td>Active Skill</td><td>Non-Attribute</td><td>Fusion</td>
+          </tr>
+          <tr>
+            <th scope="row">Gravitic Reversal<br><span class="de" lang="de">DE: Antigravitationsphänomen</span></th>
+            <td>Skill 3</td><td>Active Skill</td><td>Non-Attribute</td><td>Fusion</td>
+          </tr>
+          <tr>
+            <th scope="row">Gaze of the Abyss<br><span class="de" lang="de">DE: Abgrundblick</span></th>
+            <td>Skill 4</td><td>Active Skill</td><td>Non-Attribute</td><td>Tech</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+        <article class="skill" id="skill-suspicion-insight">
+          <h3>Suspicion &amp; Insight <span class="de" lang="de">(DE: Zweifel und Erkenntnis)</span></h3>
+          <p class="tags"><span class="badge">Passive</span> <span class="badge">Passive Skill</span> <span class="badge">Non-Attribute</span> <span class="badge">Tech</span></p>
+          <p>When using Ecive, enemies in front are inflicted with the Ecive Scan effect.</p>
+          <p>When attacking enemies inflicted with the Ecive Scan effect, additional damage is dealt.</p>
+          <p>When an enemy with the Ecive Scan effect dies, the Ecive Scan effect is applied to nearby enemies.</p>
+          <p>Enemies positioned at the crosshair are guaranteed to receive the Ecive Scan effect; for Colossi, if the crosshair is near a weak point, that weak point receives the Ecive Scan effect.</p>
+          <p>When decrypting an Encrypted Vault, efficiency increases, and the reward amount increases upon successful decryption.</p>
+          <p class="na">Cooldown / cost / numeric values: not published in the official data.</p>
+        </article>
+        <article class="skill" id="skill-breach-projection">
+          <h3>Breach Projection <span class="de" lang="de">(DE: Breschenprojektion)</span></h3>
+          <p class="tags"><span class="badge">Skill 1</span> <span class="badge">Active Skill</span> <span class="badge">Non-Attribute</span> <span class="badge">Tech</span></p>
+          <p>Fires a barrage of Breach Shards, dealing damage to hit enemies.</p>
+          <p>If the enemy hit is inflicted with Ecive Scan, an additional effect is triggered.</p>
+          <p class="na">Cooldown / cost / numeric values: not published in the official data.</p>
+        </article>
+        <article class="skill" id="skill-breach-link">
+          <h3>Breach Link <span class="de" lang="de">(DE: Breschenring)</span></h3>
+          <p class="tags"><span class="badge">Skill 2</span> <span class="badge">Active Skill</span> <span class="badge">Non-Attribute</span> <span class="badge">Fusion</span></p>
+          <p>Creates an Arche Breach at a designated location. Inflicts a debuff on enemies near the created Arche Breach and spawns an Anti-Gravity Field on the ground. The debuff of the Arche Breach intensifies over time and further weakens Adaptive Defense. Reusing the skill retrieves the Arche Breach. On retrieval, the Anti-Gravity Field disappears, dealing Explosion Damage to the area around it and refunding a portion of the Cooldown.</p>
+          <p class="na">Cooldown / cost / numeric values: not published in the official data.</p>
+        </article>
+        <article class="skill" id="skill-gravitic-reversal">
+          <h3>Gravitic Reversal <span class="de" lang="de">(DE: Antigravitationsphänomen)</span></h3>
+          <p class="tags"><span class="badge">Skill 3</span> <span class="badge">Active Skill</span> <span class="badge">Non-Attribute</span> <span class="badge">Fusion</span></p>
+          <p>Detonates an Arche Breach, causing Gravitic Reversal.</p>
+          <p>Inflicts Tow on enemies near the Arche Breach and deals Explosion Damage to them.</p>
+          <p class="na">Cooldown / cost / numeric values: not published in the official data.</p>
+        </article>
+        <article class="skill" id="skill-gaze-of-the-abyss">
+          <h3>Gaze of the Abyss <span class="de" lang="de">(DE: Abgrundblick)</span></h3>
+          <p class="tags"><span class="badge">Skill 4</span> <span class="badge">Active Skill</span> <span class="badge">Non-Attribute</span> <span class="badge">Tech</span></p>
+          <p>Grants Gaze of the Abyss.</p>
+          <p>All Firearm Attacks from Nell target Weak Points, increasing the Weak Point Damage of herself and nearby allies.</p>
+          <p>While Gaze of the Abyss is active, hitting a target inflicted with Ecive Scan with a Breach Shard increases the duration of Gaze of the Abyss.</p>
+          <p class="na">Cooldown / cost / numeric values: not published in the official data.</p>
+        </article>
+      </section>
+
+      <section class="card" id="terms" aria-labelledby="h-terms">
+        <h2 id="h-terms">Effects named in the skill texts</h2>
+        <p class="na">Summarised only from the official skill and module descriptions above.</p>
+        <dl class="terms">
+          <dt>Ecive Scan</dt><dd>Inflicted on enemies in front when using Ecive (Suspicion &amp; Insight). Attacks on enemies with Ecive Scan deal additional damage; when such an enemy dies, Ecive Scan spreads to nearby enemies. Enemies at the crosshair always receive it; on Colossi, a weak point near the crosshair receives it.</dd>
+          <dt>Breach Shard</dt><dd>Fired in a barrage by Breach Projection. Hitting an enemy with Ecive Scan triggers an additional effect; while Gaze of the Abyss is active, it also increases the duration of Gaze of the Abyss.</dd>
+          <dt>Arche Breach</dt><dd>Created by Breach Link at a designated location; debuffs nearby enemies (intensifies over time and further weakens Adaptive Defense). Retrieved by reusing Breach Link; detonated by Gravitic Reversal.</dd>
+          <dt>Anti-Gravity Field</dt><dd>Spawned on the ground by Breach Link. Disappears when the Arche Breach is retrieved, dealing Explosion Damage around it and refunding a portion of the Cooldown.</dd>
+          <dt>Tow</dt><dd>Inflicted by Gravitic Reversal on enemies near the Arche Breach.</dd>
+          <dt>Gaze of the Abyss</dt><dd>Granted by the skill of the same name: all of Nell's Firearm Attacks target Weak Points, and Weak Point Damage of Nell and nearby allies increases.</dd>
+          <dt>Suspicion stacks</dt><dd>Only with the Transcendent module Shattered Heart: built up with Breach Spikes, then enhanced Breach Spikes are fired.</dd>
+          <dt>Encrypted Vault</dt><dd>Suspicion &amp; Insight increases decryption efficiency and the reward amount on successful decryption.</dd>
+        </dl>
+      </section>
+
+      <section class="card" id="ultimate" aria-labelledby="h-ultimate">
+        <h2 id="h-ultimate">Ultimate Nell</h2>
+        <p>There is <strong>no Ultimate Nell</strong> in the official library or in the Open API descendant data (checked 01.10.2026; Nell's descendant group contains only Nell).</p>
+      </section>
+
+      <section class="card" id="modules" aria-labelledby="h-modules">
+        <h2 id="h-modules">Exclusive Modules (max level)</h2>
+        <p>Modules from the Open API whose only allowed Descendant is Nell. Effect texts are verbatim at max level; Transcendent modules have 11 levels (Lv 0–10). No Nell-exclusive Ultimate or Trigger module exists in the data.</p>
+        <div class="table-wrap">
+        <table>
+          <caption>Nell-exclusive modules – Nexon Open API module.json</caption>
+          <thead><tr><th scope="col">Module</th><th scope="col">Tier</th><th scope="col">Socket</th><th scope="col">Slot</th><th scope="col">Max Level</th><th scope="col">Capacity at max level</th><th scope="col">Effect (max level)</th></tr></thead>
+          <tbody>
+          <tr>
+            <th scope="row">Restored Heart<br><span class="de" lang="de">DE: Zurückerhaltenes Herz</span></th>
+            <td>Transcendent</td><td>Rutile</td><td>Skill</td><td>Lv 10</td><td>3 (Lv 0: 13)</td>
+            <td>Changes Ring of Breach and Gravitic Reversal to skills that grant buffs to allies.</td>
+          </tr>
+          <tr>
+            <th scope="row">Shattered Heart<br><span class="de" lang="de">DE: Gebrochenes Herz</span></th>
+            <td>Transcendent</td><td>Rutile</td><td>Skill</td><td>Lv 10</td><td>6 (Lv 0: 16)</td>
+            <td>Changes Gaze of the Abyss to an attack skill.<br>Builds up Suspicion stacks using Breach Spikes, then fires enhanced Breach Spikes.</td>
+          </tr>
+          <tr>
+            <th scope="row">Tactician&#x27;s Resolution<br><span class="de" lang="de">DE: Entschlossenheit der Taktikerin</span></th>
+            <td>Ancestors</td><td>—</td><td>Main</td><td>— (no levels)</td><td>16</td>
+            <td>No fixed effect text in the official data (Ancestors module).</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="na">Note: the module text says &quot;Ring of Breach&quot;; the German module text uses &quot;Breschenring&quot;, the German name of Breach Link – so it refers to Breach Link.</p>
+        <p>All other Descendant modules usable by Nell are listed at max level on <a href="https://modules.freyna.org/">MODULES.FREYNA.ORG</a>.</p>
+      </section>
+
+      <section class="card" id="weapons" aria-labelledby="h-weapons">
+        <h2 id="h-weapons">Weapons &amp; Reactor</h2>
+        <p>The official data contains <strong>no recommended weapons or reactors</strong> for Nell, and none of her skills is tied to a specific weapon type. What it does say: while <em>Gaze of the Abyss</em> is active, all of Nell's Firearm Attacks target Weak Points and the Weak Point Damage of Nell and nearby allies increases.</p>
+        <p>Stats and Unique Ability values of all Ultimate and Transcendent weapons (Lv 100, 4 stars): <a href="https://weapons.freyna.org/">WEAPONS.FREYNA.ORG</a>.</p>
+      </section>
+
+      <section class="card" id="story" aria-labelledby="h-story">
+        <h2 id="h-story">Story</h2>
+        <blockquote><p>"Was I really part of their family?<br>Wasn't I just another Hathaway making a 'rational' choice?"</p><footer>– Nell, in the official library story</footer></blockquote>
+        <p><strong>Nell Hathaway</strong> was already irreplaceable as a capable Executive Officer of <strong>Albion Headquarters</strong> and an Operations Controller who oversaw most of the Operations she planned herself. The staff cadets envied her, and her strategic judgment was considered to have surpassed <strong>Alpha</strong>'s.</p>
+        <p>Her family had "rationally" forced her out to join the academy so they would have one less mouth to feed; when contact with them was lost after they moved to <strong>Axion</strong>, she felt nothing. She came to see Alpha, the Descendants and the soldiers of Albion as her family – her Operations prioritized survival over success, and many trusted and followed her because of it.</p>
+        <p>That belief turned to doubt when she had to decide which "family members" would live and which would die: leaving ten to save a hundred, sacrificing fifty to save a thousand. She began to fear she was just another Hathaway making "rational" choices, and the screams of soldiers lost in Operations took away even her prescribed hours of sleep.</p>
+        <p>When those doubts led to her worst accident, Nell finally faced her true self. Her doubts became an abyss that reached to the ends of her mind and yielded her <strong>Arche</strong>. She resolved to embrace that part of herself – believing that faith in victory can come from the doubts of defeat – and vowed to believe in her doubts and use them to her advantage.</p>
+        <p class="na">Summary of the official library story (Story tab).</p>
+      </section>
+
+      <section class="card" id="equipment" aria-labelledby="h-equipment">
+        <h2 id="h-equipment">Exclusive Equipment / Ability: Exclusive Arche, Breach Entropy Control</h2>
+        <p>The Vulgus and humanity share two concepts: <strong>dimension</strong> – the boundaries dividing the Void, Ingris and other worlds, passed on to humanity through the Magisters – and <strong>Breach</strong>, damage done to the Dimensional Wall.</p>
+        <p>They differ in how they use it: the Vulgus artificially create Breaches to tear down the Dimensional Wall, while humanity replaces the broken Dimensional Wall with Arche and uses the replaced <strong>Breach entropy</strong> as a weapon against the enemy. Nell is still the only human who can use it that way.</p>
+        <blockquote><p>"You've always had a lot of doubts.<br>So, I trust that when given such great power, you'll use it carefully."</p><footer>– Alpha, handing Nell her appointment as Chief Executive Officer</footer></blockquote>
+      </section>
+
+      <section class="card" id="research" aria-labelledby="h-research">
+        <h2 id="h-research">Research (Acquisition)</h2>
+        <div class="table-wrap">
+        <table>
+          <caption>Research cost – official library. Acquisition: Obtainable through Research.</caption>
+          <thead><tr><th scope="col">Research</th><th scope="col">Time</th><th scope="col">Gold</th><th scope="col">Materials</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">Nell</th><td>16 Hours</td><td>400,000</td><td>Nell Enhanced Cells ×1 · Nell Stabilizer ×1 · Nell Spiral Catalyst ×1 · Nell Code ×1</td></tr>
+          <tr><th scope="row">Nell Enhanced Cells</th><td>8 Hours</td><td>200,000</td><td>Archive Shard ×48</td></tr>
+          <tr><th scope="row">Nell Stabilizer</th><td>8 Hours</td><td>200,000</td><td>Archive Shard ×48</td></tr>
+          <tr><th scope="row">Nell Spiral Catalyst</th><td>8 Hours</td><td>200,000</td><td>Archive Shard ×48</td></tr>
+          <tr><th scope="row">Nell Code</th><td>8 Hours</td><td>200,000</td><td>Archive Shard ×48</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <h3>Research materials (official descriptions)</h3>
+        <dl class="terms">
+          <dt>Nell Enhanced Cells</dt><dd>Enhanced cells designed to fit Nell&#x27;s Arche, which will replace the current cells upon injection.</dd>
+          <dt>Nell Stabilizer</dt><dd>A mechanism used to stabilize Nell&#x27;s Arche. It has been engraved in a specific way to respond to Nell&#x27;s Arche.</dd>
+          <dt>Nell Spiral Catalyst</dt><dd>Nell&#x27;s Spiral Catalyst. This catalyst can maximize Nell&#x27;s Arche response.</dd>
+          <dt>Nell Code</dt><dd>A code that contains the Arche expression formula for Nell. The basic materials needed for research must be obtained separately.</dd>
+        </dl>
+        <p class="na">Drop locations of Archive Shards are not listed on the official library page.</p>
+      </section>
+
+      <section class="card" id="sources" aria-labelledby="h-sources">
+        <h2 id="h-sources">Sources</h2>
+        <ul>
+          <li><a href="https://tfd.nexon.com/en/library/descendants/101000029">NEXON LIBRARY – NELL</a> (feature, voice actor, skills, story, exclusive ability, Lv 40 stats, research)</li>
+          <li><a href="https://open.api.nexon.com/static/tfd/meta/en/descendant.json">OPEN API DESCENDANT.JSON</a> (stats, skills; German names from the <code>/meta/de/</code> files)</li>
+          <li><a href="https://open.api.nexon.com/static/tfd/meta/en/module.json">OPEN API MODULE.JSON</a> (exclusive modules)</li>
+          <li><a href="https://descendant.gg/database/descendants/101000029">DESCENDANT.GG – NELL</a> (community builds; third party)</li>
+          <li>Plain-text versions for AI: <a href="llms.txt">LLMS.TXT</a> · <a href="llms-full.txt">LLMS-FULL.TXT</a></li>
+        </ul>
+      </section>
+    </main>
+    <footer class="tfd-footer">
+      <section class="tfd-contact" id="contact" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact</h2>
+        <dl>
+          <dt>Name</dt><dd>Christian Grigoriadis</dd>
+          <dt>Artist Name</dt><dd>Zagathou</dd>
+          <dt>TFD In-Game Name</dt><dd>Zagathou#4768</dd>
+          <dt>E-Mail</dt><dd><a href="mailto:xelotath@outlook.de">XELOTATH@OUTLOOK.DE</a></dd>
+          <dt>Session App ID</dt><dd class="sid">055065749fb6c6c2f07cb2ed15021b88eed3fc480e87215cca925ede91454e7173</dd>
+          <dt>About</dt><dd><a href="https://zagathou.github.io/zagathou/">ZAGATHOU.GITHUB.IO/ZAGATHOU</a></dd>
+          <dt>GitHub</dt><dd><a href="https://github.com/Zagathou">GITHUB.COM/ZAGATHOU</a></dd>
+        </dl>
+      </section>
+      <nav class="tfd-pages" aria-labelledby="tfd-pages-h">
+        <p id="tfd-pages-h">TFD Pages:</p>
+        <ul>
+          <li><a href="https://freyna.org/">FREYNA.ORG</a></li>
+          <li><a href="https://modules.freyna.org/">MODULES.FREYNA.ORG</a></li>
+          <li><a href="https://weapons.freyna.org/">WEAPONS.FREYNA.ORG</a></li>
+          <li><a href="https://raven.freyna.org/">RAVEN.FREYNA.ORG</a></li>
+          <li><a href="https://nell.freyna.org/">NELL.FREYNA.ORG</a></li>
+          <li><a href="https://descendant.gg/">DESCENDANT.GG</a></li>
+        </ul>
+      </nav>
+      <p>Game data source: official <a href="https://tfd.nexon.com/en/library/weapons?tier=Tier3">NEXON LIBRARY</a> and <a href="https://openapi.nexon.com/game/tfd/">NEXON OPEN API</a> metadata.</p>
+      <p>All values: max level (Descendants Lv 40, weapons Lv 100 at 4 stars / Unique Ability Level 4, modules at max enhancement level).</p>
+      <p>These webpages are optimized for Non-Agentic Artificial Intelligence and easy to read.</p>
+      <p>All game-related content © <a href="https://tfd.nexon.com/">NEXON</a><br>Unofficial fan site – not affiliated with or endorsed by Nexon. The First Descendant is a trademark of Nexon.</p>
+      <p>Last Updated: 01.10.2026</p>
+    </footer>
+  </div>
+</body>
+</html>
