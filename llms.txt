@@ -33,10 +33,11 @@ All values on this page are max level: Descendant stats at Lv 40 (max), modules 
 - Weapons: https://weapons.freyna.org/
 - Raven: https://raven.freyna.org/
 - Nell: https://nell.freyna.org/
+- Serena: https://serena.freyna.org/
 - descendant.gg: https://descendant.gg/
 
 All values: max level (Descendants Lv 40, weapons Lv 100 at 4 stars / Unique Ability Level 4, modules at max enhancement level).
 These webpages are optimized for Non-Agentic Artificial Intelligence and easy to read.
 All game-related content © Nexon (https://tfd.nexon.com/)
 Unofficial fan site – not affiliated with or endorsed by Nexon. The First Descendant is a trademark of Nexon.
-Last Updated: 01.10.2026
+Last Updated: 02.10.2026
